@@ -1,21 +1,103 @@
-body {
+@charset "utf=8";
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html, body, #root {
+  width: 100%;
+  height: 100%;
+}
+body {
+  background-color: #13131A;
+  color: #FFFFFF;
+  font-family: 'Share Tech', monospace;
 }
 
-.openButton{
-  
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
 }
 
+.rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ratingpro {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.star {
+  cursor: pointer;
+}
+.star svg {
+  width: 50px;
+  height: 50px;
+}
+
+.rating h2 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.openButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007BFF;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 20px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: background-color 0.2s;
+}
+.openButton:hover {
+  background-color: #0056b3;
+}
 .button {
   display: none;
+}
+
+dialog {
+  border: none;
+  border-radius: 8px;
+  padding: 2rem;
+  background-color: #FFFFFF;
+  color: #000000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+dialog input[type="button"] {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #007BFF;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+dialog input[type="button"]:hover {
+  background-color: #0056b3;
 }
